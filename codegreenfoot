@@ -1,0 +1,66 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+/**
+ * Write a description of class bee here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class bee extends Actor
+{
+    /**
+     * Act - do whatever the bee wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act()
+    {
+        if(Greenfoot.isKeyDown("w")){
+            setLocation(getX(), getY()-5);
+        }
+        if(Greenfoot.isKeyDown("a")){
+            setLocation(getX()+5, getY());
+        }
+        if(Greenfoot.isKeyDown("s")){
+            setLocation(getX(), getY()+5);
+        }
+        if(Greenfoot.isKeyDown("d")){
+            setLocation(getX()-5, getY());
+        }
+        
+    }
+    
+   
+    public class dbConnection {
+            Connection connection;
+     
+        String dbName; uasalgo;
+        String tableName; bee;
+     
+    public dbConnection(String dbUrl, String userName, String password, String driver/, String dbName/) throws Exception {
+        //this.dbName = dbName;
+        System.out.println("starting connection");
+        Class.forName(driver);
+        System.out.println("driver loaded");
+        connection = DriverManager.getConnection(dbUrl, userName, password);
+    }
+     
+    public void finalize() {
+        try {
+            shutdown();
+        }
+        catch (SQLException se) {
+            se.printStackTrace();
+    }
+    
+    
+    PENJELASAN CODE:
+    1. setLocation digunakan untuk menentukan lokasi objek ketika kita mengklik huruf atau tombol yang telah ditentukan
+    2. import digunakan untuk mengambil file dari luar aplikasi
+    3. System.out.prin digunakan untuk menampilkan perintah
+    4. connection digunakan untuk mengkoneksikan database 
+    5. void digunakan untuk menghasilkan nilai dari suatu proses.
